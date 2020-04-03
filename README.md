@@ -21,3 +21,6 @@ $ git push heroku master
 
 Open on browser:
 $ heroku open
+
+To see heroku envs:
+$ heroku run printenv
