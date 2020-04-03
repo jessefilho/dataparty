@@ -73,6 +73,8 @@
                 <b-form-input
                         id="input-2"
                         v-model="form.tel"
+                        align="left"
+                        type="tel"
                         required
                         placeholder="WhatsApp Aqui!"
                 ></b-form-input>
@@ -105,7 +107,7 @@
                             label-for="input-4">
                 <b-form-input
                         id="input-3"
-                        v-model="form.especialidade"
+                        v-model="form.speciality"
                         required
                         placeholder="Eu sou bom em..."
                 ></b-form-input>
@@ -117,9 +119,9 @@
             <b-col>
               <b-form-group id="input-group-4">
                 <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
-                  <b-form-checkbox value="me">Nunca programei!</b-form-checkbox>
-                  <b-form-checkbox value="that">Já programaei!</b-form-checkbox>
-                  <b-form-checkbox value="that">Não tenho computador, mas quer ajudar!</b-form-checkbox>
+                  <b-form-checkbox value="nunca_programei">Nunca programei.</b-form-checkbox>
+                  <b-form-checkbox value="ja_programo">Já programo ou programei.</b-form-checkbox>
+                  <b-form-checkbox value="sem_pc_mas_ajudo">Não tenho computador, mas quero ajudar.</b-form-checkbox>
                 </b-form-checkbox-group>
               </b-form-group>
             </b-col>
@@ -167,24 +169,24 @@
         form: {
           email: '',
           name: '',
-          food: null,
+          tel:'',
+          speciality: '',
           checked: []
         },
-        foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
-        show: true
+        //foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
+        show: false
       }
     },
     methods: {
       onSubmit(evt) {
         evt.preventDefault()
-        alert(JSON.stringify(this.form))
+        console.log(JSON.stringify(this.form))
       },
       onReset(evt) {
         evt.preventDefault()
         // Reset our form values
         this.form.email = ''
         this.form.name = ''
-        this.form.food = null
         this.form.checked = []
         // Trick to reset/clear native browser form validation state
         this.show = false
