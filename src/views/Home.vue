@@ -130,8 +130,8 @@
           <b-row>
 
             <b-col md="12"
-            style="width: 100%;"
-            align="center">
+                   style="width: 100%;"
+                   align="center">
               <b-button type="submit" variant="success" size="lg">Enviar</b-button>
             </b-col>
             <!--<b-col md="6">-->
@@ -141,9 +141,9 @@
           </b-row>
 
         </b-form>
-        <b-card class="mt-3" header="Form Data Result">
-          <pre class="m-0">{{ form }}</pre>
-        </b-card>
+        <!--<b-card class="mt-3" header="Form Data Result">-->
+        <!--<pre class="m-0">{{ form }}</pre>-->
+        <!--</b-card>-->
       </b-col>
       <b-col md="3">
 
@@ -151,17 +151,36 @@
 
 
     </b-row>
+    <b-row style="padding-top: 50px">
+      <b-col>
+        <b-card no-body class="overflow-hidden">
+          <h4>
+            Este formulário será destruído em:
+          </h4>
+          <b-card-text>
+            <div>
+              <Countdown deadline="April 9, 2020"></Countdown>
+            </div>
+          </b-card-text>
+        </b-card>
+      </b-col>
+
+
+    </b-row>
+
   </div>
 </template>
 
 <script>
   // @ is an alias to /src
   import HelloWorld from '@/components/HelloWorld.vue'
+  import Countdown from 'vuejs-countdown'
 
   export default {
     name: 'Home',
     components: {
-      HelloWorld
+      HelloWorld,
+      Countdown
     },
     data() {
       return {
@@ -174,7 +193,7 @@
           checked: []
         },
         //foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
-        show: false
+        show: true
       }
     },
     methods: {
